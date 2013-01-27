@@ -22,6 +22,15 @@ GIT
       equalizer (~> 0.0.3)
 
 GIT
+  remote: https://github.com/mbj/html.git
+  revision: 638aecc1e80db19bfe2a7925385417242a04fdae
+  specs:
+    html (0.0.1)
+      adamantium (~> 0.0.5)
+      backports (~> 2.7.0)
+      equalizer (~> 0.0.3)
+
+GIT
   remote: https://github.com/troessner/reek.git
   revision: ef77fcecaa21c9ebcbe4d9a79d41b0e70196bf18
   ref: ef77fcecaa21c9ebcbe4d9a79d41b0e70196bf18
@@ -35,11 +44,12 @@ GIT
 PATH
   remote: .
   specs:
-    nagivation (0.0.1)
+    navigation (0.0.1)
       adamantium (~> 0.0.5)
       anima (~> 0.0.2)
       backports (~> 2.7.0)
       composition (~> 0.0.1)
+      equalizer (~> 0.0.3)
 
 GEM
   remote: http://rubygems.org/
@@ -167,11 +177,12 @@ DEPENDENCIES
   guard (~> 1.6.1)
   guard-bundler (~> 1.0.0)
   guard-rspec (~> 2.3.3)
+  html!
   jruby-openssl (~> 0.8.2)
   libnotify (~> 0.8.0)
   listen (~> 0.7.2)!
   mutant (~> 0.2.15)
-  nagivation!
+  navigation!
   pelusa (~> 0.2.2)
   rake (~> 10.0.3)
   rb-fchange (~> 0.0.6)

@@ -1,6 +1,8 @@
 require 'adamantium'
 require 'composition'
+require 'equalizer'
 require 'anima'
+require 'html'
 
 # Library namespace
 module Navigation

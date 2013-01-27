@@ -12,8 +12,29 @@ module Navigation
     # @api private
     #
     def render(request)
-      children = items.map { |item| item.render(request) }
+      return HTML::Fragment::EMPTY if empty?
+
+      children = items.map do |item| 
+        HTML.li(item.render(request))
+      end
+
       HTML.ul(HTML.join(children))
+    end
+
+  private
+
+    # Test if collection is empty
+    #
+    # @return [true]
+    #   if collection is empty
+    #
+    # @return [false]
+    #   otherwise
+    #
+    # @api private
+    #
+    def empty?
+      items.empty?
     end
 
     EMPTY = new([])

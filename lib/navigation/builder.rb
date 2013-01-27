@@ -2,6 +2,7 @@ module Navigation
 
   # Navigation builder
   class Builder
+    include Equalizer.new(:items)
 
     # Build collection
     #
