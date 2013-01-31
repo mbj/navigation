@@ -66,12 +66,11 @@ describe Navigation::Item, '#render' do
     end
 
     let(:expected_html) do
-      '<a href="/foo/{}">Foo'                  +
-        '<ul>'                                 +
-          '<li><a href="/bar/{}">Bar</a></li>' +
-          '<li><a href="/baz/{}">Baz</a></li>' +
-        '</ul>'                                +
-      '</a>'
+      '<a href="/foo/{}">Foo</a>'            +
+      '<ul>'                                 +
+        '<li><a href="/bar/{}">Bar</a></li>' +
+        '<li><a href="/baz/{}">Baz</a></li>' +
+      '</ul>'
     end
 
     it_should_behave_like this_spec

@@ -15,8 +15,8 @@ module Navigation
     #
     def render(application)
       path = application.generate_path(name, params)
-      content = HTML.join([label, children.render(application)])
-      HTML.a(content, :href => path)
+      a = HTML.a(label, :href => path)
+      HTML.join([a, children.render(application)])
     end
 
   end
