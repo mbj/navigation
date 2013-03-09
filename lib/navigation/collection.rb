@@ -1,7 +1,7 @@
 module Navigation
   # Collection of navigation items
   class Collection
-    include Adamantium::Flat, Composition.new(:items)
+    include Adamantium::Flat, Concord.new(:items)
 
     # Return html
     #

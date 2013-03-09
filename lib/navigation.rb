@@ -1,5 +1,5 @@
 require 'adamantium'
-require 'composition'
+require 'concord'
 require 'equalizer'
 require 'anima'
 require 'html'
