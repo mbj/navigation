@@ -7,7 +7,7 @@ UncommunicativeParameterName:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
-LargeClass:
+TooManyMethods:
   max_methods: 10 # Todo decrease to 10
   exclude: []
   enabled: true
@@ -50,11 +50,11 @@ NestedIterators:
   exclude: []
   enabled: true
   max_allowed_nesting: 1
-LongMethod:
+TooManyStatements:
   max_statements: 8 
   exclude: []
   enabled: true
-Duplication:
+DuplicateMethodCall:
   allow_calls: []
   exclude: 
   - Aequitas#self.blank
@@ -75,7 +75,7 @@ UncommunicativeVariableName:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
-SimulatedPolymorphism:
+RepeatedConditional:
   exclude: []
   enabled: true
   max_ifs: 1 
@@ -84,7 +84,7 @@ DataClump:
   enabled: true
   max_copies: 2 
   min_clump_size: 2 
-ControlCouple:
+ControlParameter:
   exclude: []
   enabled: true
 LongYieldList:
