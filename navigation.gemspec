@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'navigation'
   s.version     = '0.0.1'
   s.authors     = ['Markus Schirp']
-  s.email       = ['mbj@seonic.net']
+  s.email       = ['mbj@schir-dso.com']
   s.homepage    = 'https://github.com/mbj/navigation'
   s.summary     = %q{Build web navigations}
   s.description = %q{Build web navigations and nothing else}
