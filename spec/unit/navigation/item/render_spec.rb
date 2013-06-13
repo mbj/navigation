@@ -2,16 +2,20 @@ require 'spec_helper'
 
 describe Navigation::Item, '#render' do
 
-  class FakeApplication
+  class FakeContext
     def generate_path(name, params)
       "/#{name}/#{params}"
+    end
+
+    def current_path
+      "/foo/"
     end
   end
 
   # TODO automate this
   this_spec = 'Navigation::Item#render'
 
-  let(:application) { FakeApplication.new  }
+  let(:application) { FakeContext.new  }
   let(:object)      { described_class.new(attributes) }
 
   subject { object.render(application) }
@@ -22,20 +26,39 @@ describe Navigation::Item, '#render' do
   end
 
   context 'without children' do
-    let(:attributes) do
-      {
-        :name     => 'foo',
-        :label    => 'Foo',
-        :params   => '{}',
-        :children => Navigation::Collection::EMPTY
-      }
+    context 'when inactive' do
+      let(:attributes) do
+        {
+          :name     => 'foo',
+          :label    => 'Foo',
+          :params   => '{}',
+          :children => Navigation::Collection::EMPTY
+        }
+      end
+
+      let(:expected_html) do
+        '<a href="/foo/{}">Foo</a>'
+      end
+
+      it_should_behave_like this_spec
     end
 
-    let(:expected_html) do
-      '<a href="/foo/{}">Foo</a>'
-    end
+    context 'when active' do
+      let(:attributes) do
+        {
+          :name     => 'foo',
+          :label    => 'Foo',
+          :params   => '',
+          :children => Navigation::Collection::EMPTY
+        }
+      end
 
-    it_should_behave_like this_spec
+      let(:expected_html) do
+        '<a href="/foo/" class="active">Foo</a>'
+      end
+
+      it_should_behave_like this_spec
+    end
   end
 
   context 'with chidren' do
@@ -76,4 +99,3 @@ describe Navigation::Item, '#render' do
     it_should_behave_like this_spec
   end
 end
-

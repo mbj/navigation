@@ -5,7 +5,7 @@ module Navigation
 
     # Return html
     #
-    # @param [#generate_path] application
+    # @param [#generate_path,#current_path] context
     #
     # @param [Joy::Request] request
     #
@@ -13,11 +13,15 @@ module Navigation
     #
     # @api private
     #
-    def render(application)
-      path = application.generate_path(name, params)
-      a = HTML.a(label, :href => path)
-      HTML.join([a, children.render(application)])
+    def render(context)
+      path = context.generate_path(name, params)
+      attributes = { :href => path }
+      if context.current_path == path
+        attributes[:class] = :active
+      end
+      a = HTML.a(label, attributes)
+      HTML.join([a, children.render(context)])
     end
 
-  end
-end
+  end # Item
+end # Navigation
