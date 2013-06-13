@@ -2,16 +2,19 @@ require 'spec_helper'
 
 describe Navigation::Collection, '#render' do
 
-  class FakeApplication
+  class FakeContext
     def generate_path(name, params)
       "/#{name}/#{params}"
+    end
+
+    def current_path
     end
   end
 
   # TODO automate this
   this_spec = 'Navigation::Collection#render'
 
-  let(:application) { FakeApplication.new  }
+  let(:application) { FakeContext.new  }
   let(:object)      { described_class.new(items) }
 
   subject { object.render(application) }
@@ -51,7 +54,7 @@ describe Navigation::Collection, '#render' do
 
   context 'without items' do
     let(:items) { [] }
-    
+
     it { should be(HTML::Fragment::EMPTY) }
   end
 end
