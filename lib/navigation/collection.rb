@@ -14,7 +14,7 @@ module Navigation
     def render(request)
       return HTML::Fragment::EMPTY if empty?
 
-      children = items.map do |item| 
+      children = items.map do |item|
         HTML.li(item.render(request))
       end
 
@@ -39,5 +39,5 @@ module Navigation
 
     EMPTY = new([])
 
-  end
-end
+  end # Collection
+end # Navigation
