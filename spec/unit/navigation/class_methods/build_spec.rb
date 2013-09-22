@@ -18,7 +18,7 @@ describe Navigation, '.build' do
   end
 
   let(:block)  { proc { result } }
-  let(:result) { mock('Result')  }
+  let(:result) { double('Result')  }
 
   it 'should call Builder' do
     should be(result)
