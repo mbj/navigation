@@ -10,7 +10,7 @@ module Navigation
     #
     # @api private
     #
-    def self.run(&block)
+    def self.run
       instance = new
       yield(instance)
       Collection.new(instance.items)
