@@ -46,20 +46,20 @@ module Navigation
     #
     def item(name, label, params = {}, &block)
       children = if block
-                   Builder.run(&block) 
+                   Builder.run(&block)
                  else
                    Collection::EMPTY
                  end
 
       items << Item.new(
-        :name => name, 
-        :label => label, 
-        :params => params, 
+        :name => name,
+        :label => label,
+        :params => params,
         :children => children
       )
 
       self
     end
-  end
 
-end
+  end # Builder
+end # Navigation
