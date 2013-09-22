@@ -13,7 +13,7 @@ module Navigation
     def self.run(&block)
       instance = new
       yield(instance)
-      Navigation::Collection.new(instance.items)
+      Collection.new(instance.items)
     end
 
     # Return items
