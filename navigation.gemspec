@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency('anima',       '~> 0.2.0')
-  s.add_dependency('adamantium',  '~> 0.1.0')
+  s.add_dependency('adamantium',  '~> 0.2.0')
   s.add_dependency('equalizer',   '~> 0.0.7')
   s.add_dependency('concord',     '~> 0.1.4')
   s.add_dependency('html',        '~> 0.1.0')
